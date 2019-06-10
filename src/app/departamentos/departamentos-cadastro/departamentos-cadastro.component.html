@@ -1,0 +1,46 @@
+<p-toast></p-toast>
+
+<div class="container">
+    <form #f="ngForm" autocomplete="off" (ngSubmit)="">
+        <div class="ui-g">
+
+            <div class="ui-g-12">
+              <h1>{{editando?'Ediçao de ': 'Novo'}} Departamento</h1>
+            </div>
+
+            <div class="ui-g-12 ui-md-9 ui-fluid">
+
+              <label>Nome:</label>
+              <input pInputText type="text" name="nome"
+                [(ngModel)]="empresa.nome"
+                #nome="ngModel" required minlength="3">
+
+                <label>Cidade:</label>
+                <input pInputText type="text" name="nome"
+                [(ngModel)]="empresa.cidade"
+                #cidade="ngModel" required minlength="3">
+
+                <label>UF:</label>
+                <p-dropdown [options]="empresas"
+                [(ngModel)]="empresa.estado"
+                name="uf" [filter]="true">
+                </p-dropdown>
+
+                <label>Telefone:</label>
+                <input pInputText type="text" name="nome"
+                [(ngModel)]="empresa.telefone"
+                #="ngModel" required minlength="3">
+
+                <div *ngIf="nome.hasError('required') && nome.touched">Informe um nome</div>
+                <div *ngIf="nome.hasError('minlength')">O nome deve ter no mínimo 3 caractares</div>
+            </div>
+
+            <div class="ui-g-12">
+                <button pButton type="submit" label="Salvar" [disabled]="f.invalid" class=" boxButton"></button>
+                <button pButton type="button" label="Novo" class="ui-button-info" class=" boxButton" routerLink="/empresas/novo"></button>
+                <a routerLink="/empresas">Voltar para empresas</a>
+            </div>
+
+        </div>
+    </form>
+</div>
