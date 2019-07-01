@@ -1,3 +1,54 @@
-<p>
-  vgtrabalho-cadastro works!
-</p>
+<!--<p-toast></p-toast>-->
+
+<div class="container">
+  <form #f="ngForm" autocomplete="off" (ngSubmit)="salvar(f)">
+      <div class="ui-g">
+
+        <div class="ui-g-12">
+          <h1>Cadastro de Vagas de Trabalho</h1>
+        </div>
+
+          <div class="ui-g-12 ui-md-9 ui-fluid">
+
+            <div class="ui-g-12 ui-md-9 ui-fluid">
+              <label>Empresa:</label>
+            <p-dropdown [options]="empresas"
+              [(ngModel)]="vgtrabalho.empresa.id"
+              name="empresa" [filter]="true">
+            </p-dropdown>
+            </div>
+
+            <div class="ui-g-12 ui-md-9 ui-fluid">
+              <label>Departamento:</label>
+            <p-dropdown [options]="departamentos"
+              [(ngModel)]="vgtrabalho.departamento.id"
+              name="departamento" [filter]="true">
+            </p-dropdown>
+            </div>
+
+              <label>Nome do Cargo:</label>
+              <input pInputText type="text" name="nomedcargo"
+              [(ngModel)]="vgtrabalho.nomedcargo"
+              #nome="ngModel" required minlength="3">
+
+              <label>Salário:</label>
+              <p-inputMask [(ngModel)]="vgtrabalho.salario" name="salario" mask="999999999999"></p-inputMask>
+
+              <label>Nível de escolaridade:</label>
+              <input pInputText type="text" name="nivelesc"
+              [(ngModel)]="vgtrabalho.nivelesc"
+              #nome="ngModel" required minlength="3">
+
+
+
+              <div *ngIf="nome.hasError('required') && nome.touched">Informe um nome</div>
+              <div *ngIf="nome.hasError('minlength')">O nome deve ter no mínimo 3 caractares</div>
+          </div>
+
+          <div class="ui-g-12">
+              <button pButton type="submit" label="Salvar" class=" boxButton"></button>
+          </div>
+
+      </div>
+  </form>
+</div>

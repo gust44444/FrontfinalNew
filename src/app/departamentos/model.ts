@@ -1,5 +1,3 @@
-import { EmpresasCadastroComponent } from '../empresas/empresas-cadastro/empresas-cadastro.component';
-
 export class Departamento{
   id: number;
   nomedep: string;

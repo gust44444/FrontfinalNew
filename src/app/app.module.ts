@@ -1,4 +1,6 @@
+import { VgtrabalhoCadastroComponent } from './vgtrabalho/vgtrabalho-cadastro/vgtrabalho-cadastro.component';
 import { EmpresasModule } from './empresas/empresas.module';
+import { VgtrabalhoModule } from './vgtrabalho/vgtrabalho.module';
 import { DepartamentosPesquisaComponent } from './departamentos/departamentos-pesquisa/departamentos-pesquisa.component';
 import { DepartamentosCadastroComponent } from './departamentos/departamentos-cadastro/departamentos-cadastro.component';
 import { EmpresasCadastroComponent } from './empresas/empresas-cadastro/empresas-cadastro.component';
@@ -18,7 +20,8 @@ const rotas: Routes = [
   {path: 'departamentos', component: DepartamentosCadastroComponent},
   {path: 'departamentos/table', component: DepartamentosPesquisaComponent},
   {path: 'empresas', component: EmpresasCadastroComponent},
-  {path: 'empresas/table', component: EmpresasCadastroComponent}
+  {path: 'empresas/table', component: EmpresasCadastroComponent},
+  {path: 'vgtrabalho', component: VgtrabalhoCadastroComponent},
 ];
 
 @NgModule({
@@ -29,6 +32,7 @@ const rotas: Routes = [
     BrowserModule,
     BrowserAnimationsModule,
     DepartamentosModule,
+    VgtrabalhoModule,
     EmpresasModule,
     HttpClientModule,
     RouterModule.forRoot(rotas)
