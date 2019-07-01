@@ -1,7 +1,13 @@
+import { EmpresasCadastroComponent } from '../empresas/empresas-cadastro/empresas-cadastro.component';
+
 export class Departamento{
   id: number;
-  nome: string;
-  cidade:string;
-  uf: string;
-  telefone:string;
+  nomedep: string;
+  nomeger: string;
+  empresa= new Empresa();
+}
+
+export class Empresa {
+  id: number;
+	nome: string;
 }
