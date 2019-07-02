@@ -11,9 +11,10 @@ import { MessageService, ConfirmationService } from 'primeng/api';
 import { FormsModule } from '@angular/forms';
 import { ConfirmDialogModule} from 'primeng/confirmdialog';
 import { EmpresasService } from './empresas.service';
+import { EmpresasPesquisaComponent } from './empresas-pesquisa/empresas-pesquisa.component';
 
 @NgModule({
-  declarations: [EmpresasCadastroComponent],
+  declarations: [EmpresasCadastroComponent, EmpresasPesquisaComponent],
   imports: [
     CommonModule,
     ButtonModule,
@@ -26,7 +27,8 @@ import { EmpresasService } from './empresas.service';
     RouterModule
   ],
   exports: [
-    EmpresasCadastroComponent
+    EmpresasCadastroComponent,
+    EmpresasPesquisaComponent
 ],
 providers: [
   EmpresasService,

@@ -26,19 +26,25 @@
             </p-dropdown>
             </div>
 
+
+            <div class="ui-g-12 ui-md-9 ui-fluid">
               <label>Nome do Cargo:</label>
               <input pInputText type="text" name="nomedcargo"
               [(ngModel)]="vgtrabalho.nomedcargo"
               #nome="ngModel" required minlength="3">
+            </div>
 
+            <div class="ui-g-12 ui-md-9 ui-fluid">
               <label>Salário:</label>
               <p-inputMask [(ngModel)]="vgtrabalho.salario" name="salario" mask="999999999999"></p-inputMask>
+            </div>
 
+            <div class="ui-g-12 ui-md-9 ui-fluid">
               <label>Nível de escolaridade:</label>
               <input pInputText type="text" name="nivelesc"
               [(ngModel)]="vgtrabalho.nivelesc"
               #nome="ngModel" required minlength="3">
-
+            </div>
 
 
               <div *ngIf="nome.hasError('required') && nome.touched">Informe um nome</div>

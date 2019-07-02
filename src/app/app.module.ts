@@ -15,13 +15,16 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { ConfirmationService } from 'primeng/api';
 
 import{Routes, RouterModule} from '@angular/router';
+import { EmpresasPesquisaComponent } from './empresas/empresas-pesquisa/empresas-pesquisa.component';
 
 const rotas: Routes = [
-  {path: 'departamentos', component: DepartamentosCadastroComponent},
   {path: 'departamentos/table', component: DepartamentosPesquisaComponent},
+  {path: 'departamentos', component: DepartamentosCadastroComponent},
+  {path: 'departamentos/:id', component: DepartamentosCadastroComponent},
+  {path: 'empresas/table', component: EmpresasPesquisaComponent},
   {path: 'empresas', component: EmpresasCadastroComponent},
-  {path: 'empresas/table', component: EmpresasCadastroComponent},
-  {path: 'vgtrabalho', component: VgtrabalhoCadastroComponent},
+  {path: 'empresas/:id', component: EmpresasCadastroComponent},
+  {path: 'vgtrabalho', component: VgtrabalhoCadastroComponent}
 ];
 
 @NgModule({

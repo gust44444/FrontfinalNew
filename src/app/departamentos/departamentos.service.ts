@@ -14,8 +14,8 @@ export class DepartamentosService {
 
 
   pesquisar(filtro: any): Promise<any> {
-    if(filtro.nomeger){
-      this.urlFiltro = 'http://localhost:8080/departamentos/filtro?nome='+filtro.nome;
+    if(filtro.nomedep){
+      this.urlFiltro = 'http://localhost:8080/departamentos/filtro?nomedep='+filtro.nomedep;
     }else{
       this.urlFiltro = 'http://localhost:8080/departamentos';
     }
