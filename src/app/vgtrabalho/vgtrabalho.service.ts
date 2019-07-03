@@ -14,7 +14,7 @@ export class VgtrabalhoService {
 
   pesquisar(filtro: any): Promise<any> {
     if(filtro.nomedcargo){
-      this.urlFiltro = 'http://localhost:8080/vgtrabalho/filtro?nome='+filtro.nome;
+      this.urlFiltro = 'http://localhost:8080/vgtrabalho/filtro?nome='+filtro.nomedcargo;
     }else{
       this.urlFiltro = 'http://localhost:8080/vgtrabalho';
     }

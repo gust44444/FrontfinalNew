@@ -5,34 +5,49 @@
       <div class="ui-g">
 
         <div class="ui-g-12">
-          <h1>Cadastro de empresas</h1>
+          <h1>{{editando?'Ediçao ': 'Cadastro'}} de empresas</h1>
         </div>
 
           <div class="ui-g-12 ui-md-9 ui-fluid">
-
             <label>Nome:</label>
             <input pInputText type="text" name="nome"
               [(ngModel)]="empresa.nome"
               #nome="ngModel" required minlength="3">
 
+              <div *ngIf="nome.hasError('required') && nome.touched">Informe um nome</div>
+              <div *ngIf="nome.hasError('minlength')">O nome deve ter no mínimo 3 caractares</div>
+            </div>
+
+            <div class="ui-g-12 ui-md-9 ui-fluid">
               <label>Cidade:</label>
               <input pInputText type="text" name="uf"
               [(ngModel)]="empresa.uf"
               #nome="ngModel" required minlength="3">
 
-              <label>Estado:</label>
+              <div *ngIf="nome.hasError('required') && nome.touched">Informe um nome</div>
+              <div *ngIf="nome.hasError('minlength')">O nome deve ter no mínimo 3 caractares</div>
+            </div>
+
+
+            <div class="ui-g-12 ui-md-9 ui-fluid">
+            <label>Estado:</label>
               <input pInputText type="text" name="cidade"
               [(ngModel)]="empresa.cidade"
               #nome="ngModel" required minlength="3">
 
-              <label>Telefone:</label>
+              <div *ngIf="nome.hasError('required') && nome.touched">Informe um nome</div>
+              <div *ngIf="nome.hasError('minlength')">O nome deve ter no mínimo 3 caractares</div>
+            </div>
+
+            <div class="ui-g-12 ui-md-9 ui-fluid">
+            <label>Telefone:</label>
               <input pInputText type="text" name="telefone"
               [(ngModel)]="empresa.telefone"
               #nome="ngModel" required minlength="3">
 
               <div *ngIf="nome.hasError('required') && nome.touched">Informe um nome</div>
               <div *ngIf="nome.hasError('minlength')">O nome deve ter no mínimo 3 caractares</div>
-          </div>
+            </div>
 
           <div class="ui-g-12">
               <button pButton type="submit" label="Salvar" class=" boxButton"></button>

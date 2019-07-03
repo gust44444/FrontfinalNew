@@ -5,7 +5,7 @@
       <div class="ui-g">
 
         <div class="ui-g-12">
-          <h1>Cadastro de Vagas de Trabalho</h1>
+          <h1>{{editando?'Ediçao ': 'Cadastro'}} de Vagas de Trabalho</h1>
         </div>
 
           <div class="ui-g-12 ui-md-9 ui-fluid">
@@ -13,7 +13,7 @@
             <div class="ui-g-12 ui-md-9 ui-fluid">
               <label>Empresa:</label>
             <p-dropdown [options]="empresas"
-              [(ngModel)]="vgtrabalho.empresa.id"
+              [(ngModel)]="vgtrabalho.empresa.id" placeholder="Selecione uma empresa"
               name="empresa" [filter]="true">
             </p-dropdown>
             </div>
@@ -21,7 +21,7 @@
             <div class="ui-g-12 ui-md-9 ui-fluid">
               <label>Departamento:</label>
             <p-dropdown [options]="departamentos"
-              [(ngModel)]="vgtrabalho.departamento.id"
+              [(ngModel)]="vgtrabalho.departamento.id" placeholder="Selecione um departamento"
               name="departamento" [filter]="true">
             </p-dropdown>
             </div>
