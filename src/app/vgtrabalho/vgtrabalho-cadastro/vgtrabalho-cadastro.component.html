@@ -19,7 +19,7 @@
             </div>
 
             <div class="ui-g-12 ui-md-9 ui-fluid">
-              <label>Departamento:</label>
+            <label>Departamento:</label>
             <p-dropdown [options]="departamentos"
               [(ngModel)]="vgtrabalho.departamento.id" placeholder="Selecione um departamento"
               name="departamento" [filter]="true">
@@ -31,28 +31,30 @@
               <label>Nome do Cargo:</label>
               <input pInputText type="text" name="nomedcargo"
               [(ngModel)]="vgtrabalho.nomedcargo"
-              #nome="ngModel" required minlength="3">
+              #nome="ngModel">
+              <div *ngIf="nome.hasError('required') && nome.touched">Informe um nome para o cargo</div>
             </div>
 
             <div class="ui-g-12 ui-md-9 ui-fluid">
               <label>Salário:</label>
-              <p-inputMask [(ngModel)]="vgtrabalho.salario" name="salario" mask="999999999999"></p-inputMask>
+              <input pInputText type="text" name="salario"
+              [(ngModel)]="vgtrabalho.salario"
+              #nome="ngModel" required n>
             </div>
 
             <div class="ui-g-12 ui-md-9 ui-fluid">
               <label>Nível de escolaridade:</label>
-              <input pInputText type="text" name="nivelesc"
-              [(ngModel)]="vgtrabalho.nivelesc"
-              #nome="ngModel" required minlength="3">
+              <p-dropdown [options]="nivelesc" [(ngModel)]="vgtrabalho.nivelesc" name="nivelesc" placeholder="Selecione um nível de escolaridade"></p-dropdown>
             </div>
 
 
-              <div *ngIf="nome.hasError('required') && nome.touched">Informe um nome</div>
-              <div *ngIf="nome.hasError('minlength')">O nome deve ter no mínimo 3 caractares</div>
+
           </div>
 
           <div class="ui-g-12">
               <button pButton type="submit" label="Salvar" class=" boxButton"></button>
+
+              <button pButton type="submit" label="Ir para Vagas de trabalho" class=" boxButton" routerLink="/vgtrabalho/table"></button>
           </div>
 
       </div>

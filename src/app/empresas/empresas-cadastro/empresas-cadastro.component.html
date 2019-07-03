@@ -14,43 +14,36 @@
               [(ngModel)]="empresa.nome"
               #nome="ngModel" required minlength="3">
 
-              <div *ngIf="nome.hasError('required') && nome.touched">Informe um nome</div>
-              <div *ngIf="nome.hasError('minlength')">O nome deve ter no mínimo 3 caractares</div>
+              <div *ngIf="nome.hasError('required') && nome.touched">Informe um nome para empresa</div>
             </div>
 
             <div class="ui-g-12 ui-md-9 ui-fluid">
               <label>Cidade:</label>
-              <input pInputText type="text" name="uf"
+              <input pInputText type="text" name="cidade"
               [(ngModel)]="empresa.uf"
               #nome="ngModel" required minlength="3">
 
-              <div *ngIf="nome.hasError('required') && nome.touched">Informe um nome</div>
-              <div *ngIf="nome.hasError('minlength')">O nome deve ter no mínimo 3 caractares</div>
+              <div *ngIf="nome.hasError('required') && nome.touched">Informe um nome para cidade</div>
             </div>
 
 
             <div class="ui-g-12 ui-md-9 ui-fluid">
             <label>Estado:</label>
-              <input pInputText type="text" name="cidade"
-              [(ngModel)]="empresa.cidade"
-              #nome="ngModel" required minlength="3">
+            <p-dropdown [options]="estados" [(ngModel)]="empresa.estado" name="estado" placeholder="Selecione o estado" [filter]="true"></p-dropdown>
 
-              <div *ngIf="nome.hasError('required') && nome.touched">Informe um nome</div>
-              <div *ngIf="nome.hasError('minlength')">O nome deve ter no mínimo 3 caractares</div>
             </div>
 
             <div class="ui-g-12 ui-md-9 ui-fluid">
             <label>Telefone:</label>
-              <input pInputText type="text" name="telefone"
-              [(ngModel)]="empresa.telefone"
-              #nome="ngModel" required minlength="3">
-
-              <div *ngIf="nome.hasError('required') && nome.touched">Informe um nome</div>
-              <div *ngIf="nome.hasError('minlength')">O nome deve ter no mínimo 3 caractares</div>
+              <p-inputMask name="telefone" mask="(99)9999-9999" required minlength="10" [(ngModel)]="empresa.telefone"
+              #nome="ngModel"></p-inputMask>
+              <div *ngIf="nome.hasError('minlength')">o telefone deve ter 10 caracteres</div>
             </div>
 
           <div class="ui-g-12">
               <button pButton type="submit" label="Salvar" class=" boxButton"></button>
+
+              <button pButton type="submit" label="Ir para tabela de empresas" class=" boxButton" routerLink="/empresas/table"></button>
           </div>
 
       </div>

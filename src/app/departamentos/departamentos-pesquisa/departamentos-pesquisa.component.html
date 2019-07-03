@@ -24,16 +24,18 @@
           <p-table [value]="departamentos" [paginator]="true" [rows]="3" [responsive]="true">
               <ng-template pTemplate="header" >
                   <tr>
-                    <th class="col-id-header">Id</th>
                     <th>Departamentos</th>
+                    <th>Gerente</th>
+                    <th>Empresa</th>
                     <th class="col-acoes"></th>
                   </tr>
                </ng-template>
 
                <ng-template pTemplate="body" let-dep>
                   <tr>
-                    <td class="col-id">{{dep.id}}</td>
                     <td>{{dep.nomedep}}</td>
+                    <td>{{dep.nomeger}}</td>
+                    <td>{{dep.empresa.id}}</td>
                     <td class="col-acoes">
                         <button pButton icon="pi pi-pencil" pTooltip="Editar" tooltipPosition="top" showDelay="1000"  class="ui-button-info" [routerLink]="['/departamentos', dep.id]"></button>
                         <button pButton icon="pi pi-trash"  pTooltip="Excluir" tooltipPosition="top" showDelay="1000" class="ui-button-danger" (click)="confirmarExclusao(dep)"></button>

@@ -12,6 +12,8 @@ import { FormsModule } from '@angular/forms';
 import { ConfirmDialogModule} from 'primeng/confirmdialog';
 import { EmpresasService } from './empresas.service';
 import { EmpresasPesquisaComponent } from './empresas-pesquisa/empresas-pesquisa.component';
+import { DropdownModule } from 'primeng/dropdown';
+import {InputMaskModule} from 'primeng/inputmask';
 
 @NgModule({
   declarations: [EmpresasCadastroComponent, EmpresasPesquisaComponent],
@@ -24,7 +26,9 @@ import { EmpresasPesquisaComponent } from './empresas-pesquisa/empresas-pesquisa
     ToastModule,
     FormsModule,
     ConfirmDialogModule,
-    RouterModule
+    RouterModule,
+    DropdownModule,
+    InputMaskModule
   ],
   exports: [
     EmpresasCadastroComponent,

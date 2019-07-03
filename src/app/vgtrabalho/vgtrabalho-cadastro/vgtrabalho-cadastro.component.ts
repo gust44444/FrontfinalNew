@@ -5,6 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { VgtrabalhoService } from './../vgtrabalho.service';
 import { MessageService } from 'primeng/api';
 
+
 @Component({
   selector: 'app-vgtrabalho-cadastro',
   templateUrl: './vgtrabalho-cadastro.component.html',
@@ -15,12 +16,20 @@ export class VgtrabalhoCadastroComponent implements OnInit {
   vgtrabalho = new Vgtrabalho();
   empresas = [];
   departamentos = [];
+  nivelesc = [];
 
   constructor(
     private service: VgtrabalhoService,
     private messageService: MessageService,
     private rota: ActivatedRoute
-  ) { }
+  ) {
+    this.nivelesc = [
+      {label: 'Nenhum', value: 'Nenhum'},
+      {label: 'Fundamental', value: 'Fundamental'},
+      {label: 'Médio', value: 'Médio'},
+      {label: 'Superior', value: 'Superior'},
+    ];
+  }
 
   ngOnInit() {
     this.pesquisarEmpresas();

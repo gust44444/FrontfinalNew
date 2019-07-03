@@ -15,9 +15,8 @@
                 [(ngModel)]="departamento.nomedep"
                 #nome="ngModel" required minlength="3">
 
-
-                <div *ngIf="nome.hasError('required') && nome.touched">Informe um nome</div>
-                <div *ngIf="nome.hasError('minlength')">O nome deve ter no mínimo 3 caractares</div>
+                <div *ngIf="nome.hasError('required')"  class="ui error message"><b style="color:red;">Informe um nome para o departamento</b></div>
+                <!--<div *ngIf="nome.hasError('required') && nome.touched">Informe um nome</div>-->
               </div>
 
               <div class="ui-g-12 ui-md-9 ui-fluid">
@@ -26,14 +25,13 @@
                 [(ngModel)]="departamento.nomeger"
                 #nome="ngModel" required minlength="3">
 
-                <div *ngIf="nome.hasError('required') && nome.touched">Informe um nome</div>
-                <div *ngIf="nome.hasError('minlength')">O nome deve ter no mínimo 3 caractares</div>
+                <div *ngIf="nome.hasError('required') && nome.touched">Informe um nome para o gerente</div>
               </div>
 
               <div class="ui-g-12 ui-md-9 ui-fluid">
                 <label>Empresa:</label>
               <p-dropdown [options]="empresas"
-                [(ngModel)]="departamento.empresa.id" placeholder="Selecione um departamento"
+                [(ngModel)]="departamento.empresa.id" placeholder="Selecione uma empresa"
                 name="empresa" [filter]="true">
               </p-dropdown>
               </div>
@@ -42,6 +40,7 @@
 
             <div class="ui-g-12">
                 <button pButton type="submit" label="Salvar" class=" boxButton"></button>
+                <button pButton type="submit" label="Ir para tabela de Departamentos" class=" boxButton" routerLink="/departamentos/table"></button>
             </div>
 
         </div>

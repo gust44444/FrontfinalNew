@@ -17,6 +17,7 @@ import { ConfirmationService } from 'primeng/api';
 import{Routes, RouterModule} from '@angular/router';
 import { EmpresasPesquisaComponent } from './empresas/empresas-pesquisa/empresas-pesquisa.component';
 import { VgtrabalhoPesquisaComponent } from './vgtrabalho/vgtrabalho-pesquisa/vgtrabalho-pesquisa.component';
+import { ButtonModule } from 'primeng/button';
 
 const rotas: Routes = [
   {path: 'departamentos/table', component: DepartamentosPesquisaComponent},
@@ -41,7 +42,8 @@ const rotas: Routes = [
     VgtrabalhoModule,
     EmpresasModule,
     HttpClientModule,
-    RouterModule.forRoot(rotas)
+    RouterModule.forRoot(rotas),
+    ButtonModule
   ],
   providers: [
     ConfirmationService

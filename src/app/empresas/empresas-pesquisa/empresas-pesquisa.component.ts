@@ -18,7 +18,8 @@ export class EmpresasPesquisaComponent implements OnInit {
         private msg: MessageService,
         private conf: ConfirmationService
 
-  ) { }
+  ) {
+  }
 
   pesquisar(){
     this.service.pesquisar({nome:this.busca})

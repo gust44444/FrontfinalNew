@@ -39,6 +39,10 @@ export class VgtrabalhoService {
     return this.http.delete(this.vgtrabalhoURL+"/"+id).toPromise().then(() => null);
   }
 
+  retornaEmpresas():Promise<void> {
+    return this.http.get<any>(this.vgtrabalhoURL+"/vgemp").toPromise();
+  }
+
   listarPorNome(nome: string): Promise<any> {
     return this.http.get<any>(this.vgtrabalhoURL + '?nomedcargo=' + nome).toPromise();
   }

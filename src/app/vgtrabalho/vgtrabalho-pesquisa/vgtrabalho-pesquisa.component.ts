@@ -13,6 +13,8 @@ export class VgtrabalhoPesquisaComponent implements OnInit {
 
   busca: string;
 
+  empresas = [];
+
   constructor(
     private service:VgtrabalhoService,
     private msg: MessageService,
@@ -25,6 +27,14 @@ export class VgtrabalhoPesquisaComponent implements OnInit {
       this.vgtrabalho=dados;
     });
   }
+
+ /* returnEmpresas(){
+      this.service.retornaEmpresas()
+      .then((dados)=>{
+        this.empresas=dados;
+      });
+  }
+  */
 
   ngOnInit() {
     this.pesquisar();
